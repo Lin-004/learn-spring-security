@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.lin</groupId>
-    <artifactId>ssc</artifactId>
+    <artifactId>login</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>learn-spring-security</name>
     <description>learn-spring-security</description>
