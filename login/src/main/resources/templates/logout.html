@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 适配移动端，保证响应式显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>退出登录</title>
+    <style>
+        /* 重置浏览器默认样式，消除边距和默认样式⼲扰 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+        }
+
+        /* ⻚⾯整体布局：全屏居中，浅背景提升视觉舒适度 */
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #f5f7fa;
+            /* Flex布局实现⽔平+垂直双居中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 退出登录按钮样式美化 */
+        .logout-btn {
+            /* 按钮基础样式 */
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: #4096ff;
+            color: #ffffff;
+            font-size: 16px;
+            border-radius: 8px;
+            /* 去除默认边框 */
+            border: none;
+            cursor: pointer;
+            /* 阴影提升层次感 */
+            box-shadow: 0 2px 8px rgba(64, 150, 255, 0.3);
+            /* 过渡动画，让交互更丝滑 */
+            transition: all 0.3s ease;
+            /* ⽂字居中 */
+            text-align: center;
+            min-width: 120px;
+        }
+
+        /* ⿏标悬浮交互效果：加深背景⾊，提升阴影，轻微放⼤ */
+        .logout-btn:hover {
+            background-color: #1e88e5;
+            box-shadow: 0 4px 12px rgba(64, 150, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* 点击激活效果：轻微缩⼩，确保交互反馈 */
+        .logout-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+<!-- 给a标签添加类名，绑定美化样式，保留原有跳转功能 -->
+<a href="/logout" class="logout-btn">退出登录</a>
+</body>
+</html>

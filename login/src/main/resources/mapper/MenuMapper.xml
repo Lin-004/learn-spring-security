@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.login.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.lin.login.pojo.Menu">
+            <id property="id" column="id" />
+            <result property="name" column="name" />
+            <result property="url" column="url" />
+            <result property="permission" column="permission" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,url,permission
+    </sql>
+    <select id="selectByUserId" resultType="com.lin.login.pojo.Menu">
+        select m.id ,m.name,m.url,m.permission
+        from user u
+        join role_user ru on  u.id = ru.uid
+        join role r on ru.rid = r.id
+        join role_menu rm on r.id = rm.rid
+        join menu m on rm.mid = m.id
+        where u.id = #{userId};
+    </select>
+</mapper>

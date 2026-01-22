@@ -1,0 +1,18 @@
+<!-- src/main/resources/templates/index.html -->
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>企业级登录系统</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<h1>Hello Security</h1>
+<!-- 测试过程不需要关闭csrf防护 -->
+<form th:action="@{/login}" method="post">
+    <button type="submit" class="btn btn-primary">Log Out</button>
+</form>
+<!-- 测试过程需要关闭csrf防护 否则404 -->
+<a th:href="@{/logout}">Log Out</a>
+</body>
+</html>
